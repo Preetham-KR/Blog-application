@@ -1,0 +1,10 @@
+<%= link_to "New blog post", new_blog_post_path(@blog_post) if user_signed_in?%>
+
+<h2>blog post id <%=params[:id]%></h2>
+
+<%= image_tag @blog_post.cover_image if @blog_post.cover_image.present?%>
+<h3><%= @blog_post.title%></h3>
+<%= @blog_post.content%>
+<div>
+<%= link_to "Edit", edit_blog_post_path(@blog_post) if user_signed_in? %>
+</div>

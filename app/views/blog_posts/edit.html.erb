@@ -1,0 +1,5 @@
+<%= link_to "New blog post", new_blog_post_path(@blog_post) if user_signed_in?%>
+
+<h1>Editing a blog post</h1>
+<%= render partial: "form", locals:{blog_post: @blog_post} %>
+<%=button_to "Delete", @blog_post, method: :delete, data:{turbo_confirm: "Are you sure?"} %>
